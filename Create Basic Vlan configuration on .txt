@@ -1,0 +1,32 @@
+Create Basic Vlan configuration on Switches
+
+Task 
+
+create four (VLAN 10,20,30,40)
+configure port fa0/8 in to vlan 10
+configure multiple port(4-7 and 10) to vlan 20
+
+
+en 
+conf t
+vlan 10
+name sales
+
+vlan 20
+name marketing
+
+vlan 30
+name HR
+
+vlan 40
+name Android team
+end
+
+int fa0/8
+switchport mode access
+switchport access vlan 10
+exit
+
+int range fa0/4-7,fa0/10
+switchport mode access 
+switchport access vlan 20
